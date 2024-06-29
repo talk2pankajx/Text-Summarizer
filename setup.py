@@ -37,7 +37,7 @@ __version__ = "0.0.0"
 
 REPO_NAME = "Text-Summarizer"
 AUTHOR_NAME = "talk2pankajx"
-SRC_REPO = "TEXT-SUMMARIZATION"
+SRC_REPO = "Text_summarizer"
 AUTHOR_EMAIL ="talk2pankajx@gmail.com"
 
 setuptools.setup(
