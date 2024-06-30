@@ -2,7 +2,8 @@ from Text_Summarizer.constants import *
 from Text_Summarizer.logging import logger
 from Text_Summarizer.utils.common import read_yaml_file, create_directories
 import os
-from Text_Summarizer.entity import DataIngestionConfig
+from Text_Summarizer.entity import (DataIngestionConfig,
+                                    DataValidationConfig)
 
 class ConfigurationManager:
     def __init__(self, config_file_path = CONFIG_PATH,
@@ -26,3 +27,17 @@ class ConfigurationManager:
         
     )
         return data_ingestion_config
+    
+    def get_data_validation_config(self)->DataValidationConfig:
+        
+        config = self.config.data_validation
+        create_directories([config.root_dir])
+        
+        data_validation_config = DataValidationConfig(
+            root_dir=config.root_dir,
+            STATUS_FILE=config.STATUS_FILE,
+            ALL_REQUIRED_FILES=config.ALL_REQUIRED_FILES,
+        )
+        
+        return data_validation_config
+    
