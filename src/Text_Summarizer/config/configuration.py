@@ -3,7 +3,7 @@ from Text_Summarizer.logging import logger
 from Text_Summarizer.utils.common import read_yaml_file, create_directories
 import os
 from Text_Summarizer.entity import (DataIngestionConfig,
-                                    DataValidationConfig,DataTransformationConfig,ModelTrainerConfig)
+                                    DataValidationConfig,DataTransformationConfig,ModelTrainerConfig,ModelEvaluationConfig)
 
 class ConfigurationManager:
     def __init__(self, config_file_path = CONFIG_PATH,
@@ -81,3 +81,17 @@ class ConfigurationManager:
         
         return model_trainer_config
 
+    def get_model_trainer_config(self):
+        config = self.config.model_evaluation
+        
+        create_directories([config.root_dir])
+        
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            model_path=config.model_path,
+            tokenizer_path=config.tokenizer_path,
+            metric_file_name=config.metric_file_name,
+        )
+        
+        return model_evaluation_config
