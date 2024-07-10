@@ -12,3 +12,9 @@ Text Summarization
 6. update the pipeline
 7. update the main.py
 8. update the app.py
+
+
+
+ECR Repository
+
+654654326764.dkr.ecr.ap-south-1.amazonaws.com/text-summarization
