@@ -1,6 +1,7 @@
 from python:3.12
 RUN apt update -y && apt install awscli -y
 workdir /app
+COPY . /app
 RUN pip install -r requirements.txt
 RUN pip install --upgrade accelerate
 RUN pip uninstall -y transformers accelerate
