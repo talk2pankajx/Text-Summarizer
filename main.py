@@ -46,7 +46,7 @@ STAGE_NAME = 'model_trainer_stage'
 
 try:
     logger.info("stating model training stage pipeline")
-    model_training_pipeline = ModelEvalutionTrainingPipeline()
+    model_training_pipeline = ModelTrainingPipeline()
     model_training_pipeline.main()
     logger.info("model training pipeline completed")
 except Exception as e:
@@ -56,10 +56,10 @@ except Exception as e:
 STAGE_NAME = 'model_evalution_stage'
 
 try:
-    logger.info("stating model training stage pipeline")
-    model_training_pipeline = ()
-    model_training_pipeline.main()
-    logger.info("model training pipeline completed")
+    logger.info("stating model evalution stage pipeline")
+    model_evaluation_pipeline = ModelEvalutionTrainingPipeline()
+    model_evaluation_pipeline.main()
+    logger.info("model evaluation pipeline completed")
 except Exception as e:
     logger.exception(e)
     raise e

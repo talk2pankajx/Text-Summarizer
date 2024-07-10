@@ -81,7 +81,7 @@ class ConfigurationManager:
         
         return model_trainer_config
 
-    def get_model_trainer_config(self):
+    def get_model_evaluation_config(self):
         config = self.config.model_evaluation
         
         create_directories([config.root_dir])

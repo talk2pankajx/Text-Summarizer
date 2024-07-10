@@ -32,7 +32,7 @@ class ModelTrainer:
             args = trainer_args,
             tokenizer = tokenizer,
             data_collator = seq2seq2collator,
-            train_dataset = dataset_samsum_pt["train"],
+            train_dataset = dataset_samsum_pt["test"],
             eval_dataset=dataset_samsum_pt["validation"]
         )
         trainer.train()
